@@ -1,36 +1,50 @@
-# vscode-markdown-abc README
+# VSCode Markdown Preview Mermaid Support
 
-This is the README for your extension "vscode-markdown-abc". After writing up a brief description, we recommend including the following sections.
+Adds support for [abc music notation](https://abcnotation.com/) to VS Code's builtin markdown preview.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Render abc notation within code blocks
+~~~markdown
+```abc
+X:1
+T:Speed the Plough
+M:4/4
+C:Trad.
+K:G
+|:GABc dedB|dedB dedB|c2ec B2dB|c2A2 A2BA|
+  GABc dedB|dedB dedB|c2ec B2dB|A2F2 G4:|
+|:g2gf gdBd|g2f2 e2d2|c2ec B2dB|c2A2 A2df|
+  g2gf g2Bd|g2f2 e2d2|c2ec B2dB|A2F2 G4:|
+```
+~~~
 
-For example if there is an image subfolder under your extension project workspace:
+## Back End
 
-\!\[feature X\]\(images/feature-x.png\)
+Utilises and packages the [abcjs](https://github.com/paulrosen/abcjs) library for rendering. Currently running on the 6.0.0-beta
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Manual Installation
+1. Ensure [vsce](https://www.npmjs.com/package/vsce) is installed via `npm install -g vsce`
+2. Clone this git repository
+3. Initialise the npm packages `npm install`
+4. Package the extension `vsce package`
+5. Install into code `code --install-extension vscode-markdown-abc-0.0.1.vsix`
 
-## Requirements
+## Future Work
+- [ ] Fix Packaging Metadata
+- [ ] Add Extension Icon
+- [ ] Publish to VSCode Marketplace
+- [ ] Publish to Open VSX Registry
+- [ ] Display Errors
+- [ ] Add support for other renderer options
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
+<!--
 ## Known Issues
 
 Calling out known issues can help limit users opening duplicate issues against your extension.
+-->
 
+<!--
 ## Release Notes
 
 Users appreciate release notes as you update your extension.
@@ -46,25 +60,12 @@ Fixed issue #.
 ### 1.1.0
 
 Added features X, Y, and Z.
+-->
 
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
+## Acknowledgements
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+- This extension is heavily based off of [Markdown Preview Mermaid Support](https://github.com/mjbvz/vscode-markdown-mermaid).
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+- [ABC.js](https://github.com/paulrosen/abcjs) is the main workhorse rendering the notation. All credits for the interpreter and rendering goes to that team.
 
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- [abc notation](https://abcnotation.com/) is a specification invented by Chris Walshaw to notate music in plain text format. Credits go to him and the other contributors for coming up the specification.
