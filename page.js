@@ -11,7 +11,7 @@ function init() {
         abcContainer.innerHTML = '';
         abcContainer.appendChild(out);
 
-        ABCJS.renderAbc(id, source);
+        ABCJS.renderAbc(id, source, { responsive: "resize" });
     }
 }
 
