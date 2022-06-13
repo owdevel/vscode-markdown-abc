@@ -1,4 +1,4 @@
-# VSCode Markdown Preview Mermaid Support
+# VSCode Markdown Preview ABC Notation Support
 
 Adds support for [abc music notation](https://abcnotation.com/) to VS Code's builtin markdown preview.
 
